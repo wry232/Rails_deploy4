@@ -32,7 +32,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @people = @idea.users
 
-    
+
     # render json:@people
   end
 
@@ -52,7 +52,7 @@ class IdeasController < ApplicationController
     else
       flash[:errors] = ["Can not delete."]
     end
-    redirect_to 'bright_ideas'
+    redirect_to '/bright_ideas'
   end
 
 
