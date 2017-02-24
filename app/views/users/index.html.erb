@@ -1,0 +1,23 @@
+<h1>Welcome!</h1>
+<h3>Register</h3>
+
+<form class="" action="/register" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  Name: <input id="name" type="text" name="user[name]" placeholder="enter name"><br>
+  Alias: <input id="lname" type="text" name="user[alias]" placeholder="enter alias"><br>
+  Email: <input id="email" type="email" name="user[email]" placeholder="enter email"><br>
+  Password: <input id="password" type="password" name="user[password]" placeholder="password"><br>
+  <p>*Password should be at least 8 characters</p>
+  Confirm PW: <input id="password_confirmation" type="password" name="user[password_confirmation]" placeholder="confirm password"><br>
+  <input type="submit" value="Register">
+</form>
+<br><br>
+
+<h3>Login</h3>
+
+<form class="" action="/login" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  Email: <input id="email" type="email" name="user[email]" placeholder="enter email"><br>
+  Password: <input id="password" type="password" name="user[password]" placeholder="password"><br>
+  <input type="submit" value="Log in">
+</form>

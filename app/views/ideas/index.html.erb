@@ -1,0 +1,22 @@
+<h2>Hi <%= @current_user.alias%></h2>
+<form action="/ideas" method="post">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <textarea type="text" name="idea[content]" placeholder="Post something witty here.." rows="3" cols="60"></textarea>
+
+	<input type="submit" value="Idea!">
+</form>
+
+  <% @ideas.each do |i|%>
+  <p> <a href="/user/<%= i.user.id%>"><%= i.user.alias%></a> says: <%= i.content%>
+    <% if i.user.id == session[:user_id] %>
+        <form class="" action="/idea/<%= i.id%>/delete" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="id" value="<%= i.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" name="delete_secret" value="X">
+        </form>
+      <% end %>
+  </p>
+  <a href="/like/<%= i.id %>">Like</a> | <a href="/bright_ideas/<%= i.id %>"><%= i.likes.count %>people like this</a>
+
+  <% end%>
