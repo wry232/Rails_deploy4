@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   get 'users/new'
-  post 'register'=>'users#register'
+  post '/register'=>'users#register'
   get '/bright_ideas'=>'ideas#index'
   post '/login'=>'users#login'
   post '/ideas'=>'ideas#create'

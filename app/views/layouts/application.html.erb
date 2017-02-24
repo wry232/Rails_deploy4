@@ -22,6 +22,8 @@
   			<p><%= e %></p>
   		<% end %>
   	<% end %>
+
+    
     <% if @current_user%>
 		<form action="/logout">
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

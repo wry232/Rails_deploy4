@@ -17,16 +17,16 @@ class IdeasController < ApplicationController
 
   def show
 
-    if !session[:people]
-      session[:people]=[]
-    end
-    @people = session[:people]
+    # if !session[:people]
+    #   session[:people]=[]
+    # end
+    # @people = session[:people]
     # render json: session[:people]
     # render json:@people
   end
 
   def new
-    @people = session[:people]
+    # @people = session[:people]
     # fail
     @current_user = User.find(session[:user_id])
     @idea = Idea.find(params[:id])

@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       session[:user_id] = new_user.id
       redirect_to '/bright_ideas'
     else
-      flash[:errors] = new_user.errors.full_messages
+      # flash[:errors] = new_user.errors.full_messages
+      flash[:errors] = ["You have to enter every field correctly"]
       redirect_to '/main'
     end
   end
